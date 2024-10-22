@@ -1,0 +1,19 @@
+<font color=#ff2a2a size=500px><center><b>HELLO</b>...</font>
+
+<p id="hitokoto">
+  <a href="#" id="hitokoto_text" style="text-decoration: none;">:D 获取中...</a>
+</p>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.querySelector('#hitokoto_text')
+      hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error)
+</script>
+
+<img src="https://bing.img.run/rand.php" alt="img" />
+
+</br>
